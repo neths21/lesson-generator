@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Progress Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light Gray Background */
+            color: #333; /* Dark Text for readability */
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #003366; /* Dark Blue */
+            padding: 15px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff; /* White Text */
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff; /* White Text */
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #FFD700; /* Gold Accent */
+        }
+
+        /* Dashboard Styling */
+        .dashboard {
+            max-width: 900px;
+            margin: 30px auto;
+            background: #ffffff; /* White Background */
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #003366; /* Dark Blue */
+            font-weight: 600;
+        }
+
+        .progress-section {
+            margin-bottom: 30px;
+        }
+        .student {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .progress-bar-container {
+            background: #e1e1e1; /* Light Gray */
+            border-radius: 5px;
+            overflow: hidden;
+            height: 20px;
+            width: 100%;
+        }
+        .progress-bar {
+            height: 100%;
+            text-align: center;
+            font-size: 14px;
+            line-height: 20px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .test-analysis {
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #f9f9f9; /* Light Background for Table */
+            color: #333;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd; /* Light Border */
+            text-align: center;
+        }
+        th {
+            background: #003366; /* Dark Blue */
+            color: #ffffff; /* White Text */
+        }
+        tr:nth-child(even) {
+            background: #f4f4f4; /* Slightly Lighter Gray */
+        }
+        tr:hover {
+            background: #d1e0e0; /* Hover Highlight */
+        }
+
+        /* Lesson Plan Button */
+        .lesson-plan-btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background: #0052cc; /* Blue */
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .lesson-plan-btn:hover {
+            background: #003366; /* Darker Blue on Hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .dashboard {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Dashboard</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Test Report</a></li>
+            <li><a href="#">Lesson Plans</a></li>
+            <li><a href="#">Student Analysis</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <h2>Student Progress Dashboard</h2>
+
+        <div class="progress-section">
+            <h3>Study Progress</h3>
+            
+            <div class="student">
+                <span>elmor</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 70%; background: #00b300;">70%</div>
+                </div>
+            </div>
+            
+            <div class="student">
+                <span>quakaroon</span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 50%; background: #ffcc00;">50%</div>
+                </div>
+            </div>
+            
+            <div class="student">
+                <span>johngli </span>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 85%; background: #ff6600;">85%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="test-analysis">
+            <h3>Test Analysis</h3>
+            <table>
+                <tr>
+                    <th>Student</th>
+                    <th>Score</th>
+                    <th>Grade</th>
+                </tr>
+                <tr>
+                    <td>elmor</td>
+                    <td>85</td>
+                    <td>B+</td>
+                </tr>
+                <tr>
+                    <td>quakaroon</td>
+                    <td>90</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>johngli </td>
+                    <td>76</td>
+                    <td>C+</td>
+                </tr>
+            </table>
+        </div>
+
+        <a href="lesson-plan.html" class="lesson-plan-btn">Generate Lesson Plan</a>
+    </div>
+
+</body>
+</html>
